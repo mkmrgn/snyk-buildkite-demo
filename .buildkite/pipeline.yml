@@ -20,5 +20,4 @@ steps:
       - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
           scan: 'container'
           token-env: 'BUILDKITE_SNYK_TOKEN'
-          image: 'gilhardl/ionic'
-          annotate: true
+          image: alpine
