@@ -8,7 +8,7 @@ steps:
           scan: 'oss'
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: true
-          foo: 12345
+          foo: 42
 
     # - label: ":snyk: Code scan"
     #   plugins:
