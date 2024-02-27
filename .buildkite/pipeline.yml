@@ -14,6 +14,7 @@ steps:
       - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
           scan: 'code'
           token-env: 'BUILDKITE_SNYK_TOKEN'
+          annotate: true
       
     - label: ":snyk: Container Scan"
       plugins:
@@ -21,3 +22,4 @@ steps:
           scan: 'container'
           token-env: 'BUILDKITE_SNYK_TOKEN'
           image: alpine
+          annotate: true
