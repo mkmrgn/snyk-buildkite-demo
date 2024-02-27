@@ -8,18 +8,20 @@ steps:
           scan: 'oss'
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: true
+          block: true
+          path: ionic
 
-    - label: ":snyk: Code scan"
-      plugins:
-      - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
-          scan: 'code'
-          token-env: 'BUILDKITE_SNYK_TOKEN'
-          annotate: true
+    # - label: ":snyk: Code scan"
+    #   plugins:
+    #   - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
+    #       scan: 'code'
+    #       token-env: 'BUILDKITE_SNYK_TOKEN'
+    #       annotate: true
       
-    - label: ":snyk: Container Scan"
-      plugins:
-      - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
-          scan: 'container'
-          token-env: 'BUILDKITE_SNYK_TOKEN'
-          image: alpine
-          annotate: true
+    # - label: ":snyk: Container Scan"
+    #   plugins:
+    #   - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
+    #       scan: 'container'
+    #       token-env: 'BUILDKITE_SNYK_TOKEN'
+    #       image: alpine
+    #       annotate: true
