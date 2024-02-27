@@ -9,7 +9,7 @@ steps:
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: true
           block: true
-          path: ionic
+         
 
     # - label: ":snyk: Code scan"
     #   plugins:
