@@ -7,8 +7,7 @@ steps:
       - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
           scan: 'oss'
           token-env: 'BUILDKITE_SNYK_TOKEN'
-          annotate: true
-          block: true
+          annotate: false
          
 
     - label: ":snyk: Code scan"
