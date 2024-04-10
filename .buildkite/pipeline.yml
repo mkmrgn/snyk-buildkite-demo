@@ -22,5 +22,5 @@ steps:
       - snyk#v0.1.0:
           scan: 'container'
           token-env: 'BUILDKITE_SNYK_TOKEN'
-          image: alpine
+          image: snyk/snyk-container-demo
           annotate: true
