@@ -4,7 +4,7 @@ steps:
     steps:
     - label: ":snyk: OSS Scan"
       plugins:
-      - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
+      - snyk#v0.1.0:
           scan: 'oss'
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: false
@@ -12,14 +12,14 @@ steps:
 
     - label: ":snyk: Code scan"
       plugins:
-      - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
+      - snyk#v0.1.0:
           scan: 'code'
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: true
       
     - label: ":snyk: Container Scan"
       plugins:
-      - /Users/jeremy/dev/plugins/snyk-buildkite-plugin#snyk-mvp:
+      - snyk#v0.1.0:
           scan: 'container'
           token-env: 'BUILDKITE_SNYK_TOKEN'
           image: alpine
