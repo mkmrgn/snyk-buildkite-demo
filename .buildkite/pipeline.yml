@@ -1,5 +1,5 @@
 steps:
-  - group: ":snyk: Snyk Scans"
+  - group: ":snyk: Snyk Code and OSS Scans"
     key: "snyk"
     steps:
     - label: ":snyk: OSS Scan"
@@ -8,8 +8,6 @@ steps:
           scan: 'oss'
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: true
-          block: true
-         
 
     - label: ":snyk: Code scan"
       plugins:
@@ -17,11 +15,21 @@ steps:
           scan: 'code'
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: true
-      
-    - label: ":snyk: Container Scan"
-      plugins:
-      - snyk#v0.1.0:
-          scan: 'container'
-          token-env: 'BUILDKITE_SNYK_TOKEN'
-          image: snyk/snyk-container-demo
-          annotate: true
+
+  - label: ":buildkite: Building a container image ::hammer_and_wrench:"
+    command: "echo 'lorem ipsum etc'"
+  
+  - label: ":snyk: Container Scan"
+    plugins:
+    - snyk#v0.1.0:
+        scan: 'container'
+        token-env: 'BUILDKITE_SNYK_TOKEN'
+        image: snyk/snyk-container-demo
+        annotate: true
+        block: true
+
+  - label: ":rspec: Run tests"
+    command: "echo Running tests"
+
+  - label: ":octopus-deploy: Deploy"
+    command: "echo Deploying"
