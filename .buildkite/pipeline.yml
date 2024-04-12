@@ -16,6 +16,8 @@ steps:
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: true
 
+  - wait
+  
   - label: ":hammer_and_wrench: Building a container image"
     command: "echo Building container"
   
