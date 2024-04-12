@@ -28,6 +28,8 @@ steps:
         annotate: true
         block: true
 
+  - wait
+  
   - label: ":rspec: Run tests"
     command: "echo Running tests"
 
