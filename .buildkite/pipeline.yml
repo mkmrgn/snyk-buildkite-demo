@@ -20,8 +20,10 @@ steps:
   
   - label: ":hammer_and_wrench: Building a container image"
     command: "echo Building container"
+    key: "build_container"
   
   - label: ":snyk: Container Scan"
+    depends_on: "build_container"
     plugins:
     - snyk#v0.1.0:
         scan: 'container'
@@ -34,6 +36,8 @@ steps:
   
   - label: ":rspec: Run tests"
     command: "echo Running tests"
+    key: "tests"
 
   - label: ":octopus-deploy: Deploy"
     command: "echo Deploying"
+    depends_on: "tests"
