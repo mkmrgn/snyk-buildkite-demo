@@ -16,8 +16,8 @@ steps:
           token-env: 'BUILDKITE_SNYK_TOKEN'
           annotate: true
 
-  - label: ":buildkite: Building a container image ::hammer_and_wrench:"
-    command: "echo 'lorem ipsum etc'"
+  - label: ":hammer_and_wrench: Building a container image"
+    command: "echo Building container"
   
   - label: ":snyk: Container Scan"
     plugins:
